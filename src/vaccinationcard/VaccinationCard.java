@@ -1,21 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vaccinationcard;
 
-/**
- *
- * @author Notebook
- */
-public class VaccinationCard {
+import java.time.LocalDate;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+class VaccinationCard {
+    private Person patient;
+    private Person vaccinator;
+    private LocalDate vaccinationDate;
+    private String vaccineMaker;
+
+    public VaccinationCard(Person patient, Person vaccinator, LocalDate vaccinationDate, String vaccineMaker) {
+        this.patient = patient;
+        this.vaccinator = vaccinator;
+        this.vaccinationDate = vaccinationDate;
+        this.vaccineMaker = vaccineMaker;
     }
-    
+
+    public void printVaccinationCard() {
+        System.out.println("Vaccination Card");
+        System.out.println("-----------------");
+        System.out.println("Patient: " + patient.getName() + " " + patient.getSurname());
+        System.out.println("Patient ID: " + patient.getId().getType() + " " + patient.getId().getNumber());
+        System.out.println("Vaccinator: " + vaccinator.getName() + " " + vaccinator.getSurname());
+        System.out.println("Vaccination Date: " + vaccinationDate);
+        System.out.println("Vaccine Maker: " + vaccineMaker);
+    }
 }
